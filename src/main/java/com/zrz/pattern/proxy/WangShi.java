@@ -10,21 +10,25 @@ public class WangShi implements Reception,Interview {
     private Interview interview;
 
     /**
+     * 面试
      * 默认代理宴杰
      */
     public WangShi(){
-        this.reception = new YanJie();
         this.interview = new YanJie();
     }
 
     /**
-     * 动态代理其他人
-     * @param reception 其他面试官
+     * 动态代理其他人（基本工作）
+     * @param reception 其他
      */
     public WangShi(Reception reception){
         this.reception = reception;
     }
 
+    /**
+     * 动态代理其他人
+     * @param interview 其他面试官
+     */
     public WangShi(Interview interview){
         this.interview = interview;
     }

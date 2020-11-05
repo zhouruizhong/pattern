@@ -7,11 +7,16 @@ package com.zrz.pattern.proxy;
 public class Interviewers {
 
   public static void main(String[] args) throws Exception {
-      WangShi wangShi = new WangShi((Interview) new LiuCheng());
+      WangShi wangShi;
       //发布招聘
-      /*wangShi.recruit("招聘JAVA 3 名");
-      Thread.sleep(5000);*/
+      wangShi = new WangShi(new FuYuJie());
+      wangShi.recruit("招聘JAVA 3 名");
+
+      //模拟招聘等待
+      Thread.sleep(5000);
+
       // 面试
+      wangShi = new WangShi(new LiuCheng());
       wangShi.interview("张三");
   }
 }
